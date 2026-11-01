@@ -1,4 +1,4 @@
-import closeLvh from '../../assets/closeruma.png';
+import closeLvh from '../../assets/closelvh.png';
 import { text, topBar } from './TopBar.css';
 
 export function TopBar({ onCheek }: { onCheek: () => void }) {

@@ -7,8 +7,8 @@ import {
     pinkText,
     redText,
 } from './App.css';
-import lvh from './assets/rumaruma.png';
-import lvhText from './assets/ruma.svg';
+import lvh from './assets/lvh.png';
+import lvhText from './assets/lvh.svg';
 import { HugCard } from './components/hugCard/HugCard';
 import { Stats } from './components/stats/Stats';
 import { TopBar } from './components/topbar/TopBar';

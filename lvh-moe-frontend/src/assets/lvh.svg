@@ -1,0 +1,13 @@
+<svg width="250" height="109" viewBox="0 0 250 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(16 0) skewX(-8)" stroke="url(#lvh_text_gradient)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+<path d="M20 18V88H66"/>
+<path d="M88 18L113 88L138 18"/>
+<path d="M162 18V88M212 18V88M162 53H212"/>
+</g>
+<defs>
+<linearGradient id="lvh_text_gradient" x1="0" y1="-16.712" x2="250" y2="111.356" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00C8FF"/>
+<stop offset="1" stop-color="#D2EEF0"/>
+</linearGradient>
+</defs>
+</svg>
