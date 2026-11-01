@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: lvh-moe
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 1s
+    scrape_configs:
+      - job_name: 'lvh-moe'
+        static_configs:
+          - targets: ['backend:8080']
