@@ -9,7 +9,8 @@
         "lint": "eslint .",
         "preview": "vite preview",
         "storybook": "storybook dev -p 6006",
-        "build-storybook": "storybook build"
+        "build-storybook": "storybook build",
+        "deploy": "cf deploy"
     },
     "dependencies": {
         "@fontsource/roboto": "^5.2.9",
@@ -20,6 +21,7 @@
         "react-dom": "^19.2.0"
     },
     "devDependencies": {
+        "@cloudflare/vite-plugin": "2.0.0-beta.v.8",
         "@eslint/js": "^9.39.1",
         "@storybook/react-vite": "^10.1.4",
         "@types/node": "^24.10.1",
@@ -27,6 +29,7 @@
         "@types/react-dom": "^19.2.3",
         "@vanilla-extract/vite-plugin": "^5.1.3",
         "@vitejs/plugin-react": "^5.1.1",
+        "cf": "1.0.0-beta.26",
         "eslint": "^9.39.1",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^7.0.1",
