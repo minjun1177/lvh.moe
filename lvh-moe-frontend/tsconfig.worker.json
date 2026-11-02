@@ -22,5 +22,6 @@
         "noFallthroughCasesInSwitch": true,
         "noUncheckedSideEffectImports": true
     },
-    "include": ["worker", "cloudflare.config.ts", ".cloudflare/types"]
+    "include": ["worker", "cloudflare.config.ts", ".cloudflare/types"],
+    "exclude": ["worker/**/*.test.ts"]
 }

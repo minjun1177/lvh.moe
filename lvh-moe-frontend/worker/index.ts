@@ -1,4 +1,5 @@
 import { DurableObject } from 'cloudflare:workers';
+import { handleGallery } from './gallery';
 
 // Counters the frontend uses; anything else is rejected so the
 // Durable Object storage cannot be filled with arbitrary keys.
@@ -77,10 +78,16 @@ async function readCounterName(request: Request): Promise<string | null> {
 }
 
 export default {
-    async fetch(request, _env, ctx): Promise<Response> {
+    async fetch(request, env, ctx): Promise<Response> {
         const url = new URL(request.url);
         // Static assets handle everything else; see assets.runWorkerFirst.
         const path = url.pathname.replace(/^\/api(?=\/|$)/, '');
+
+        if (path.startsWith('/gallery')) {
+            const response = await handleGallery(path, request, env);
+            if (response) return response;
+        }
+
         const counters = ctx.exports.Counters.getByName('global');
 
         if (path === '/ws') {
@@ -114,7 +121,10 @@ export default {
             if (!COUNTER_NAMES.has(name)) {
                 return json({ success: false, error: 'unknown counter' }, 404);
             }
-            return json({ success: true, value: await counters.getValue(name) });
+            return json({
+                success: true,
+                value: await counters.getValue(name),
+            });
         }
 
         return json({ success: false, error: 'not found' }, 404);
